@@ -41,5 +41,3 @@ const proof = await sdk.pol.getMockProof({
 
 ```
 
-# geostream-ts-sdk
-# geostream-ts-sdk
