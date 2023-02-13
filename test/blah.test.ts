@@ -7,7 +7,6 @@ describe('getProof', () => {
       signer: new Wallet(process.env.PRIVATE_KEY!),
     });
     const proof = await sdk.pol.getProof({
-      owner: '0x6457cb57dAF5DB29adbE7a137904b2042652E4bA',
       locations: [
         {
            from: 1676879793,

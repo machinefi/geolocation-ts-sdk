@@ -6,7 +6,6 @@ import { Signer } from 'ethers';
 import { SiweMessage } from 'siwe';
 import axios from 'axios';
 import merge from 'lodash/merge';
-import { URL } from 'url';
 import globalShim from 'globalthis/shim'
 globalShim()
 
@@ -102,12 +101,16 @@ export class Pol {
     return res.data.result.data
   }
   async getMockProof({
-    owner,
     locations,
   }: {
-    owner: string;
     locations: Location[];
   }) {
+    const owner = await this.sdk.signer.getAddress();
+    const message = this._createSiweMessage({
+      owner,
+      locations,
+    });
+    await this.sdk.signer.signMessage(message);
     const res = await axios.post(this._mockPolUrl, {
       owner,
       locations,
@@ -115,12 +118,11 @@ export class Pol {
     return res.data.result.data
   }
   async getProof({
-    owner,
     locations,
   }: {
-    owner: string;
     locations: Location[];
   }) {
+    const owner = await this.sdk.signer.getAddress();
     const message = this._createSiweMessage({
       owner,
       locations,

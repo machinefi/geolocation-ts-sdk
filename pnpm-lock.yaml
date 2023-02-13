@@ -14,6 +14,7 @@ specifiers:
   globalthis: ^1.0.3
   husky: ^8.0.3
   lodash: ^4.17.21
+  lodash-es: ^4.17.21
   siwe: ^1.1.6
   size-limit: ^8.2.4
   tsdx: ^0.14.1
@@ -28,6 +29,7 @@ dependencies:
   ethers: 5.7.2
   globalthis: 1.0.3
   lodash: 4.17.21
+  lodash-es: 4.17.21
   siwe: 1.1.6_ethers@5.7.2
 
 devDependencies:
@@ -5653,6 +5655,10 @@ packages:
     dependencies:
       p-locate: 4.1.0
     dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
 
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
