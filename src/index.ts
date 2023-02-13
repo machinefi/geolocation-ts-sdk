@@ -142,7 +142,6 @@ export class GeostreamSDK {
   chain: {
     chainId: number;
   };
-  adminToken?: string;
   streamServer: StreamServer;
   get isDev() {
     return this.mode === 'dev';
@@ -155,7 +154,6 @@ export class GeostreamSDK {
     streamServer = {},
   }: {
     signer: Signer;
-    adminToken?: string
     mode?: 'dev' | 'prod';
     streamServer?: {
       api?: {
