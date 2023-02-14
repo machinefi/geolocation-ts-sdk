@@ -27,8 +27,8 @@ export interface StreamServer {
 }
 
 export class Pol {
-  sdk: GeostreamSDK;
-  constructor({ sdk }: { sdk: GeostreamSDK }) {
+  sdk: GeolocationSDK;
+  constructor({ sdk }: { sdk: GeolocationSDK }) {
     this.sdk = sdk;
   }
 
@@ -137,7 +137,7 @@ export class Pol {
   }
 }
 
-export class GeostreamSDK {
+export class GeolocationSDK {
   pol: Pol;
   mode: 'dev' | 'prod';
   signer: Signer;

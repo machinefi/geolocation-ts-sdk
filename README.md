@@ -1,14 +1,14 @@
 ## Installation
 ```bash
-pnpm i @w3bstream/geostream
+pnpm i @w3bstream/geolocation
 ```
 
 ## Guide
 
 ```js
-import { GeostreamSDK } from "@w3bstream/geostream";
+import { GeolocationSDK } from "@w3bstream/geolocation";
 
-const sdk = new GeostreamSDK({
+const sdk = new GeolocationSDK({
   mode: "dev" | "prod", //Optional, default is 'dev'
   signer: ethers.Signer, // signer extends ethers.Signer
 });
