@@ -1,9 +1,9 @@
 import { Wallet } from 'ethers';
-import { GeostreamSDK } from '../src';
+import { GeolocationSDK } from '../src';
 
 describe('getProof', () => {
   it('works', async () => {
-    const sdk = new GeostreamSDK({
+    const sdk = new GeolocationSDK({
       signer: new Wallet(process.env.PRIVATE_KEY!),
     });
     const proof = await sdk.pol.getProof({
