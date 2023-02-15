@@ -7,10 +7,17 @@ pnpm i @w3bstream/geolocation
 
 ```js
 import { GeolocationSDK } from "@w3bstream/geolocation";
+import ethers from 'ethers';
+
+// if you want to use wallet signer, you can use this, and you need to set YourPrivateKey, please store your private key locally and don't expose it to the public, in online deployment, you can inject it from environment variables
+const signer = new ethers.Wallet(YourPrivateKey);
+// if your private key is stored by wallet software, such as metamask, you can use this
+// const signer = new ethers.providers.Web3Provider(window.ethereum).getSigner();
+
 
 const sdk = new GeolocationSDK({
-  mode: "dev" | "prod", //Optional, default is 'dev'
-  signer: ethers.Signer, // signer extends ethers.Signer
+  mode: "dev", //"dev" | "prod", it's optional, default is 'dev'
+  signer, // signer extends ethers.Signer
 });
 const proof = await sdk.pol.getProof({
   owner: "0x6457cb57dAF5DB29adbE7a137904b2042652E4bA", // The wallet address of the user of which you want to prove the location. This must be the IoTeX wallet address that the user associated to Metapebble.
